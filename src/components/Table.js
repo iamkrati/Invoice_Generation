@@ -22,10 +22,7 @@ export default function Table() {
                 <td>{description}</td>
                 <td>{quantity}</td>
                 <td>{price}</td>
-                <td>{amount}
-                {
-                  totalprice=totalprice+amount
-                }</td>
+                <td>{amount}</td>
               </tr>
             </tbody>
           </React.Fragment>
