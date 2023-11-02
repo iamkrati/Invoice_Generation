@@ -3,7 +3,12 @@ import { State } from "../context/stateContext";
 
 export default function Table() {
   const { list, total } = useContext(State);
-  const totalprice=0;
+  // const totalprice=0;
+  let totalprice = 0; 
+  list.forEach(({ amount }) => {
+    totalprice += amount;
+  });
+
   return (
     <>
       <table width="100%" className="mb-10">

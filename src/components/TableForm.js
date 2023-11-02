@@ -6,6 +6,7 @@ import DeleteModal from "./DeleteModal";
 import { State } from "../context/stateContext";
 
 export default function TableForm() {
+  
   const {
     description,
     setDescription,
@@ -22,6 +23,12 @@ export default function TableForm() {
     handleSubmit,
     editRow,
   } = useContext(State);
+  let totalprice = 0; // Initialize the total price variable
+
+  // Loop through the list and add the amount of each row to totalprice
+  list.forEach(({ amount }) => {
+    totalprice += amount;
+  });
 
   return (
     <>
@@ -119,7 +126,7 @@ export default function TableForm() {
 
       <div>
         <h2 className="flex items-end justify-end text-gray-800 text-4xl font-bold">
-          Total : {total.toLocaleString()}
+          Total : {totalprice}
         </h2>
       </div>
     </>
